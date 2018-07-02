@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head_title %}Category | {{ block.super}}{% endblock head_title %}
+
+
+
+
+{% block content %}
+
+<a href="/article"> Articles </a>
+<a href="/"> Main Page </a>
+<!-- <a href="javascript: history.go(-1)">Go Back</a> -->
+
+<h1>Blog's Categories</h1>
+
+{% for obj in object_list %}
+
+<li>
+{{ obj | upper }} <br/>
+<h3>{{ obj.title }}</h3> <br/>
+{{ obj.comment }} <br/>
+{{ obj.timestamp }} <br/>
+{{ obj.category }} <br/>
+{{ obj.updated }} <br/>
+</li>  <br/>
+
+<a href="/category/{{ obj.id }}/update/" class="btn btn-success">Edit</a>
+<a href="/category/{{ obj.id }}/" class="btn btn-warning">Delete</a>
+<a href="/category/create/" class="btn btn-warning">Create</a>
+
+{% endfor %}
+
+{% endblock %}

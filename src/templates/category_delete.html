@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head_title %}Delete Category | {{ block.super}}{% endblock head_title %}
+
+
+{% block content %}
+
+<a href="javascript: history.go(-1)">Go Back</a>
+
+<h1>Delete Category</h1>
+
+<form method="post">{% csrf_token %}
+    <p>Are you sure want to delete it "{{ object }}"?</p>
+    <input type="submit" class="btn btn-danger" value="Confirm" />
+</form>
+
+{% endblock %}

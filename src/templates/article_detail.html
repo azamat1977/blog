@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head_title %}Details | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+
+<!-- <a href="javascript: history.go(-1)">Go Back</a> -->
+<a href="/">Go Back</a>
+
+<h1>Article Details </h1>
+
+
+{{ object | upper }} <br/>
+<h3>{{ object.title }} </h3><br/>
+{{ object.content }} <br/>
+{{ object.category }} <br/>
+{{ object.timestamp }} <br/>
+{{ object.updated }} <br/>
+{{ object.location }} <br/>
+{{ obj.published }} <br/>
+
+
+<a href="/article/{{ object.id }}/update/" class="btn btn-success">Edit</a>
+<a href="/article/{{ object.id }}/delete/" class="btn btn-warning">Delete</a>
+
+{% endblock %}
